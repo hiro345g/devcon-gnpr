@@ -1,5 +1,5 @@
 {
-  "name": "devcon-gnpr",
+  "name": "devcon-gnpr-202312",
   "dockerFile": "./Dockerfile",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2.3.1": {

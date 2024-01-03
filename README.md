@@ -1,4 +1,4 @@
-# devcon-gnpr
+# devcon-gnpr-202312
 
   Dev Container based on mcr.microsoft.com/devcontainers/typescript-node (go, python, ruby, desktop-lite, docker-outside-of-docker, git, git-lfs)
 
@@ -12,7 +12,7 @@
 - 開発専用の Web ブラウザ
 - 日本語入力に対応
 
-　devcon-gnpr を使うと日本語に対応した簡易 Desktop 環境が動く Docker コンテナーが使えるようになります。簡易 Desktop 環境には VNC という仕組みを使って接続して利用できます。利用方法としては Web ブラウザを使う方法、VNC クライアントを使う方法があります。
+　devcon-gnpr-202312 を使うと日本語に対応した簡易 Desktop 環境が動く Docker コンテナーが使えるようになります。簡易 Desktop 環境には VNC という仕組みを使って接続して利用できます。利用方法としては Web ブラウザを使う方法、VNC クライアントを使う方法があります。
 
 |クライアント| URL |
 |----|----|
@@ -21,7 +21,7 @@
 
 　VNC 接続をすると、簡易 Desktop 環境で Firefox や Chromium が用意できるようになり、Web アプリの開発などでも利用できるようになります。
 
-## devcon-gnpr で解決できること
+## devcon-gnpr-202312 で解決できること
 
 　Web アプリ開発時に、普段の Web ブラウザを使っていて、次のような場面で困ったことがありませんか？
 
@@ -29,7 +29,7 @@
 - 開発で使っている Cookie だけクリアしたい
 - 開発用のプラグインは開発中だけ有効にしたい
 
-　開発中に利用する Web ブラウザは普段の利用方法とは違った使い方になります。そのため、開発専用の Web ブラウザ環境を用意したいときがあります。Web ブラウザのプロファイル機能を使うと、ある程度は解決するのですが、Docker コンテナーとして用意できるなら、それを使うのも「あり」だろうと考えて、devcon-gnpr 環境を用意しました。
+　開発中に利用する Web ブラウザは普段の利用方法とは違った使い方になります。そのため、開発専用の Web ブラウザ環境を用意したいときがあります。Web ブラウザのプロファイル機能を使うと、ある程度は解決するのですが、Docker コンテナーとして用意できるなら、それを使うのも「あり」だろうと考えて、devcon-gnpr-202312 環境を用意しました。
 
 　これを使うと、普段使っているデスクトップ環境から隔離されたコンテナー環境で Firefox や Chromium といった Web ブラウザを使うことができるようになります。隔離された環境なので、例えばホストファイルにステージング環境の IP と実際に使うホスト名のエントリを登録して動作させることもできます。開発中の Web アプリの動作を確認するための専用 Web ブラウザ環境なので、後で正しい IP へ戻すといった作業も発生しません。こういった環境を用意することで、効率よく Web アプリの開発ができるようになります。
 
@@ -37,9 +37,9 @@
 
 ## 使用しているもの
 
-　Docker イメージは Docker Hub の <https://hub.docker.com/r/hiro345g/devcon-gnpr> で公開されているものを使用します。ちなみに、この GitHub のリポジトリーには、この Docker イメージをビルドするためのファイルも含まれているので、Docker Hub のものを使わずにローカルマシンでビルドしたものを使うこともできます。
+　Docker イメージは Docker Hub の <https://hub.docker.com/r/hiro345g/devcon-gnpr-202312> で公開されているものを使用します。ちなみに、この GitHub のリポジトリーには、この Docker イメージをビルドするためのファイルも含まれているので、Docker Hub のものを使わずにローカルマシンでビルドしたものを使うこともできます。
 
-　devcon-gnpr では、<https://github.com/devcontainers/images/tree/main/src/typescript-node> で公開されている mcr.microsoft.com/devcontainers/typescript-node:18-bookworm の Docker イメージをベースとしています。Feature に <https://github.com/devcontainers/features/> で公開されている common-utils、go、ruby、desktop-lite、docker-outside-of-docker、git、git-lfs を指定して Docker イメージを作成しています。
+　devcon-gnpr-202312 では、<https://github.com/devcontainers/images/tree/main/src/typescript-node> で公開されている mcr.microsoft.com/devcontainers/typescript-node:18-bookworm の Docker イメージをベースとしています。Feature に <https://github.com/devcontainers/features/> で公開されている common-utils、go、ruby、desktop-lite、docker-outside-of-docker、git、git-lfs を指定して Docker イメージを作成しています。
 
 - [common-utils](https://github.com/devcontainers/features/tree/main/src/common-utils)
 - [go](https://github.com/devcontainers/features/tree/main/src/go)
@@ -50,7 +50,7 @@
 - [git](https://github.com/devcontainers/features/tree/main/src/git)
 - [git-lfs](https://github.com/devcontainers/features/tree/main/src/git-lfs)
 
-　devcon-gnpr では、desktop-lite に次の Web ブラウザを追加して使えるようにしてあります。locale 周りの設定もしてあり、追加で fonts-vlgothic フォントもインストールしてあります。
+　devcon-gnpr-202312 では、desktop-lite に次の Web ブラウザを追加して使えるようにしてあります。locale 周りの設定もしてあり、追加で fonts-vlgothic フォントもインストールしてあります。
 
 - [Firefox](https://www.mozilla.org/firefox/) ESR
 - [Chromium](https://www.chromium.org/Home/)
@@ -68,13 +68,13 @@ desktop-lite によるデスクトップ環境では、次のソフトウェア�
 
 　Dev Container については、開発が <https://github.com/devcontainers> でされていますので、そちらをご覧ください。
 
-　ここで用意している `docker-compose.yml` では、開発するアプリの Git リモートリポジトリを devcon-gnpr コンテナーの `/home/node/workspace` （つまり、`devcon-gnpr:/home/node/workspace`）へクローンして開発することを想定しています。
+　ここで用意している `docker-compose.yml` では、開発するアプリの Git リモートリポジトリを devcon-gnpr-202312 コンテナーの `/home/node/workspace` （つまり、`devcon-gnpr-202312:/home/node/workspace`）へクローンして開発することを想定しています。
 
-　また、`devcon-gnpr:/home/node/workspace` は Docker ボリュームの devcon-gnpr-workspace-data をマウントして使うようになっています。他にも devcon-gnpr-vscode-server-extensions という Docker ボリュームを使うようになっています。
+　また、`devcon-gnpr-202312:/home/node/workspace` は Docker ボリュームの devcon-gnpr-202312-workspace-data をマウントして使うようになっています。他にも devcon-gnpr-202312-vscode-server-extensions という Docker ボリュームを使うようになっています。
 
 ## 必要なもの
 
-　devcon-gnpr を動作をさせるには、Docker、Docker Compose、Visual Studio Code (VS Code) 、Docker 拡張機能、Dev Containers 拡張機能が必要です。
+　devcon-gnpr-202312 を動作をさせるには、Docker、Docker Compose、Visual Studio Code (VS Code) 、Docker 拡張機能、Dev Containers 拡張機能が必要です。
 
 ### Docker
 
@@ -149,33 +149,33 @@ Docker Compose version v2.23.3-desktop.2
 　ファイルの構成は次のようになっています。
 
 ```text
-devcon-gnpr/
+devcon-gnpr-202312/
 ├── .devcontainer/
-│   ├── devcontainer.json ... devcon-gnpr イメージ起動用 devcontainer.json
-│   ├── docker-compose.yml ... devcon-gnpr イメージ起動用 docker-compose.yml
+│   ├── devcontainer.json ... devcon-gnpr-202312 イメージ起動用 devcontainer.json
+│   ├── docker-compose.yml ... devcon-gnpr-202312 イメージ起動用 docker-compose.yml
 │   └── sample.env  ... .env ファイルのサンプル
-├── build_devcon/ ... devcon-gnpr の Docker イメージをビルドするときに使う
+├── build_devcon/ ... devcon-gnpr-202312 の Docker イメージをビルドするときに使う
 │   ├── .devcontainer/
-│   │   ├── Dockerfile ... devcon-gnpr イメージビルド用 Dockerfile
-│   │   ├── devcontainer.json ... devcon-gnpr イメージビルド用 devcontainer.json
+│   │   ├── Dockerfile ... devcon-gnpr-202312 イメージビルド用 Dockerfile
+│   │   ├── devcontainer.json ... devcon-gnpr-202312 イメージビルド用 devcontainer.json
 │   │   ├── menu ... FluxBox メニュー用設定ファイル
 │   │   ├── node.dot.bashrc ... /home/node/.bashrc 用ファイル
 │   │   ├── node.dot.npmrc ... /home/node/.npmrc 用ファイル
 │   │   └── startup ... FluxBox 自動起動用設定ファイル
-│   └── build.sh ... devcon-gnpr の Docker イメージをビルドするためのスクリプト(npm exec を使用)
+│   └── build.sh ... devcon-gnpr-202312 の Docker イメージをビルドするためのスクリプト(npm exec を使用)
 ├── workspace_share/ ... Docker ホストとコンテナーとでファイルを共有するためのディレクトリー
 │   ├── script/
 │   │   └── install_mozc.sh ... mozc インストール用スクリプト
 │   └── dev/ ... このコンテナーを使って開発をするときに使用するファイルを置くためのディレクトリー
 │       └── dev.code-workspace ... VS Code ワークスペースのサンプル
 ├── .gitignore
-├── docker-compose.yml ... devcon-gnpr を利用するときに使う
+├── docker-compose.yml ... devcon-gnpr-202312 を利用するときに使う
 ├── LICENSE ... ライセンス
 ├── README.md  ... このファイル
 └── sample.env  ... .env ファイルのサンプル
 ```
 
-　この後、リポジトリをクローンもしくはアーカイブファイルを展開した `devcon-gnpr` ディレクトリーのパスを `${REPO_DIR}` と表現します。
+　この後、リポジトリをクローンもしくはアーカイブファイルを展開した `devcon-gnpr-202312` ディレクトリーのパスを `${REPO_DIR}` と表現します。
 
 ## デスクトップ環境
 
@@ -195,20 +195,20 @@ devcon-gnpr/
 
 ### 利用方法
 
-　VS Code を起動し、F1 キーを入力してコマンドパレットを表示してから、「開発コンテナー: コンテナーでフォルダを開く...（Dev Containers: Open Folder in Container...）」をクリックします。フォルダーを選択する画面になるので `${REPO_DIR}` を指定して開きます。すると `${REPO_DIR}/.devcontainer/devcontainer.json` の指定にしたがって、devcon-gnpr コンテナーが Dev Container として起動します。このとき、拡張機能なども追加されます。
-それから、devcon-gnpr コンテナー用の VS Code の画面となります。
+　VS Code を起動し、F1 キーを入力してコマンドパレットを表示してから、「開発コンテナー: コンテナーでフォルダを開く...（Dev Containers: Open Folder in Container...）」をクリックします。フォルダーを選択する画面になるので `${REPO_DIR}` を指定して開きます。すると `${REPO_DIR}/.devcontainer/devcontainer.json` の指定にしたがって、devcon-gnpr-202312 コンテナーが Dev Container として起動します。このとき、拡張機能なども追加されます。
+それから、devcon-gnpr-202312 コンテナー用の VS Code の画面となります。
 
-　つまり、開いている VS Code の画面が、そのまま devcon-gnpr コンテナー用の VS Code の画面として開き直されます。devcon-gnpr コンテナーでは Docker ホストのファイルを間違えて操作しないように、`${REPO_DIR}` は見えないようにしてあります。この方法で開発コンテナーを起動すると、VNC が使えるようになります。`docker compose` コマンドなどで通常のコンテナーとして起動した場合は、そのままでは VNC サーバーが起動しません。
+　つまり、開いている VS Code の画面が、そのまま devcon-gnpr-202312 コンテナー用の VS Code の画面として開き直されます。devcon-gnpr-202312 コンテナーでは Docker ホストのファイルを間違えて操作しないように、`${REPO_DIR}` は見えないようにしてあります。この方法で開発コンテナーを起動すると、VNC が使えるようになります。`docker compose` コマンドなどで通常のコンテナーとして起動した場合は、そのままでは VNC サーバーが起動しません。
 
 　起動したら、Web ブラウザから <http://localhost:6080> へアクセスします。すると、VNC 接続の画面になるので、「接続」をクリックしてパスワードを入力します。
 
 　VNC クライアントを使う場合は localhost:5901 へアクセスします。パスワードは  <http://localhost:6080> へアクセスする場合と同じです。接続したら、マウスクリックで表示できるメニューから Firefox や Chromium を起動して使うことができます。
 
-　これで devcon-gnpr コンテナーで Node.js を使った Web アプリの開発をしつつ、Web ブラウザで動作確認ができます。Docker ホストの環境から隔離されているため、開発している Web アプリの動作確認のための Web ブラウザ用設定がしやすくなります。
+　これで devcon-gnpr-202312 コンテナーで Node.js を使った Web アプリの開発をしつつ、Web ブラウザで動作確認ができます。Docker ホストの環境から隔離されているため、開発している Web アプリの動作確認のための Web ブラウザ用設定がしやすくなります。
 
 ### コンテナーの停止、削除の仕方
 
-　VS Code の Docker 拡張機能の画面で、CONTAINERS の欄に表示されている devcon-gnpr のコンテキストメニューから `Compose Stop` でコンテナー停止、`Compose Down` でコンテナー削除ができます。
+　VS Code の Docker 拡張機能の画面で、CONTAINERS の欄に表示されている devcon-gnpr-202312 のコンテキストメニューから `Compose Stop` でコンテナー停止、`Compose Down` でコンテナー削除ができます。
 
 ## 日本語入力
 
@@ -270,7 +270,7 @@ dconf load /desktop/ibus/ < /share/ibus.dconf
 
 ### フォント
 
-　フォントは fonts-vlgothic パッケージを使っています。Noto にしたい場合は、`devcon-gnpr:/share/fonts-noto-cjk-conf/local.conf` を `devcon-gnpr:/etc/fonts/local.conf` へコピーします。
+　フォントは fonts-vlgothic パッケージを使っています。Noto にしたい場合は、`devcon-gnpr-202312:/share/fonts-noto-cjk-conf/local.conf` を `devcon-gnpr-202312:/etc/fonts/local.conf` へコピーします。
 
 ```console
 sudo cp /share/fonts-noto-cjk-conf/local.conf /etc/fonts/local.conf
@@ -289,78 +289,78 @@ NotoSansCJK-Regular.ttc: "Noto Sans CJK JP" "Regular"
 
 　IBus のアイコンで Restart をすると IBus のメニューへも反映されます。
 
-### devcon-gnpr-mozc
+### devcon-gnpr-202312-mozc
 
 　この Docker イメージを使い続ける場合は、タグをつけておくなどして、再利用できるようにしておくと良いでしょう。
 
-　タグをつける前に、タグをつけた Docker イメージを利用する `devcon-gnpr-mozc` ディレクトリーを次のようにして用意します。ここでは `${BASE_DIR}` は `${REPO_DIR}/workspace_share` ディレクトリーだとしています。
+　タグをつける前に、タグをつけた Docker イメージを利用する `devcon-gnpr-202312-mozc` ディレクトリーを次のようにして用意します。ここでは `${BASE_DIR}` は `${REPO_DIR}/workspace_share` ディレクトリーだとしています。
 
 ```console
 #!/bin/sh
 BASE_DIR=$(cd $(dirname $0)/..;pwd)
 DEV_DIR=${BASE_DIR}/dev
-DIST_DIR=${BASE_DIR}/devcon-gnpr-mozc
+DIST_DIR=${BASE_DIR}/devcon-gnpr-202312-mozc
 
-if [ ! -e ${DEV_DIR}/devcon-gnpr ]; then
+if [ ! -e ${DEV_DIR}/devcon-gnpr-202312 ]; then
   cd ${DEV_DIR}/
-  wget https://github.com/hiro345g/devcon-gnpr/archive/refs/heads/main.zip
+  wget https://github.com/hiro345g/devcon-gnpr-202312/archive/refs/heads/main.zip
   unzip ${DEV_DIR}/main.zip
-  mv ${DEV_DIR}/devcon-gnpr-main ${DEV_DIR}/devcon-gnpr
+  mv ${DEV_DIR}/devcon-gnpr-202312-main ${DEV_DIR}/devcon-gnpr-202312
   rm ${DEV_DIR}/main.zip
 fi
 if [ ! -e ${DIST_DIR}/.devcontainer ]; then mkdir -p ${DIST_DIR}/.devcontainer; fi
 if [ ! -e ${DIST_DIR}/workspace_share ]; then mkdir -p ${DIST_DIR}/workspace_share; fi
-cp -r ${DEV_DIR}/devcon-gnpr/.devcontainer/* ${DIST_DIR}/.devcontainer/
-cp -r ${DEV_DIR}/devcon-gnpr/docker-compose.yml ${DIST_DIR}/
-sed -i 's/devcon-gnpr/devcon-gnpr-mozc/' ${DIST_DIR}/.devcontainer/devcontainer.json
-sed -i 's/devcon-gnpr/devcon-gnpr-mozc/' ${DIST_DIR}/docker-compose.yml
+cp -r ${DEV_DIR}/devcon-gnpr-202312/.devcontainer/* ${DIST_DIR}/.devcontainer/
+cp -r ${DEV_DIR}/devcon-gnpr-202312/docker-compose.yml ${DIST_DIR}/
+sed -i 's/devcon-gnpr-202312/devcon-gnpr-202312-mozc/' ${DIST_DIR}/.devcontainer/devcontainer.json
+sed -i 's/devcon-gnpr-202312/devcon-gnpr-202312-mozc/' ${DIST_DIR}/docker-compose.yml
 
-rm -fr ${DEV_DIR}/devcon-gnpr
+rm -fr ${DEV_DIR}/devcon-gnpr-202312
 ```
 
-　この処理と同じ動作をするスクリプトを `${REPO_DIR}/workspace_share/script/create-devcon-gnpr-mozc.sh` に用意してあります。これを devcon-gnpr コンテナーの中で実行します。
+　この処理と同じ動作をするスクリプトを `${REPO_DIR}/workspace_share/script/create-devcon-gnpr-202312-mozc.sh` に用意してあります。これを devcon-gnpr-202312 コンテナーの中で実行します。
 
 ```console
-sh /share/script/create-devcon-gnpr-mozc.sh
+sh /share/script/create-devcon-gnpr-202312-mozc.sh
 ```
 
-　すると、`devcon-gnpr-mozc` ディレクトリー（コンテナー内だと `devcon-gnpr:/share/workspace_share/devcon-gnpr-mozc` ディレクトリー、Docker ホストだと `${REPO_DIR}/workspace_share/devcon-gnpr-mozc` ディレクトリー）が作成されます。
+　すると、`devcon-gnpr-202312-mozc` ディレクトリー（コンテナー内だと `devcon-gnpr-202312:/share/workspace_share/devcon-gnpr-202312-mozc` ディレクトリー、Docker ホストだと `${REPO_DIR}/workspace_share/devcon-gnpr-202312-mozc` ディレクトリー）が作成されます。
 
 　利用するときに使えるファイルが用意できたら、イメージにタグをつけます。タグをつける場合は、次のようにします。
 
 ```console
-docker compose -p devcon-gnpr stop devcon-gnpr
-docker commit devcon-gnpr devcon-gnpr-mozc:1.0
+docker compose -p devcon-gnpr-202312 stop devcon-gnpr-202312
+docker commit devcon-gnpr-202312 devcon-gnpr-202312-mozc:1.0
 ```
 
-　この後に devcon-gnpr-mozc:1.0 を使ってコンテナーを起動する場合は、devcon-gnpr コンテナーは削除しておます。
+　この後に devcon-gnpr-202312-mozc:1.0 を使ってコンテナーを起動する場合は、devcon-gnpr-202312 コンテナーは削除しておます。
 
 ```console
-docker compose -p devcon-gnpr down
+docker compose -p devcon-gnpr-202312 down
 ```
 
-　devcon-gnpr-mozc:1.0 イメージを使って devcon-gnpr-mozc コンテナーの Dev Container を起動するときは、Docker ホストの VS Code で `devcon-gnpr-mozc` ディレクトリーを開きます。`devcon-gnpr-mozc` ディレクトリーは `devcon-gnpr` ディレクトリーと同じディレクトリー階層へ移動して使うと管理しやすいでしょう。
+　devcon-gnpr-202312-mozc:1.0 イメージを使って devcon-gnpr-202312-mozc コンテナーの Dev Container を起動するときは、Docker ホストの VS Code で `devcon-gnpr-202312-mozc` ディレクトリーを開きます。`devcon-gnpr-202312-mozc` ディレクトリーは `devcon-gnpr-202312` ディレクトリーと同じディレクトリー階層へ移動して使うと管理しやすいでしょう。
 
 　具体的なコマンドは次のようになります。
 
 ```console
 cd ${REPO_DIR}/..
-mv ./devcon-gnpr/workspace_share/devcon-gnpr-mozc .
+mv ./devcon-gnpr-202312/workspace_share/devcon-gnpr-202312-mozc .
 ```
 
-　必要なら `${REPO_DIR}/.env` ファイルを用意します。準備ができたら、VS Code で `devcon-gnpr-mozc` ディレクトリーを開きます。
+　必要なら `${REPO_DIR}/.env` ファイルを用意します。準備ができたら、VS Code で `devcon-gnpr-202312-mozc` ディレクトリーを開きます。
 
 ```console
-code devcon-gnpr-mozc
+code devcon-gnpr-202312-mozc
 ```
 
 　これで「Reopen in Container」の通知が表示されるので、「Reopen in Container」をクリックします。VS Code がコンテナーに接続した状態になったら、作業ができるようになります。
 
-　以上で、mozc がインストールされた状態の devcon-gnpr が使えるようになります。
+　以上で、mozc がインストールされた状態の devcon-gnpr-202312 が使えるようになります。
 
 ### npm 用環境変数の設定
 
-　npm 用環境変数の設定は devcon-gnpr コンテナーの `/home/node/workspace/.npmrc` に指定するようにしてあります。これは `docker-compose.yml` の環境変数 `NPM_CONFIG_USERCONFIG` を使っています。`.env` ファイル内の `NPM_CONFIG_USERCONFIG` の指定を変更することで、この環境変数の値を変更して、自分で用意した `.npmrc` ファイルを使えるようになります。npm 用環境変数の設定を変更したい場合は、この機能を使ってください。
+　npm 用環境変数の設定は devcon-gnpr-202312 コンテナーの `/home/node/workspace/.npmrc` に指定するようにしてあります。これは `docker-compose.yml` の環境変数 `NPM_CONFIG_USERCONFIG` を使っています。`.env` ファイル内の `NPM_CONFIG_USERCONFIG` の指定を変更することで、この環境変数の値を変更して、自分で用意した `.npmrc` ファイルを使えるようになります。npm 用環境変数の設定を変更したい場合は、この機能を使ってください。
 
 　なお、初期設定では、開発コンテナーのユーザー node が npm パッケージをグローバルにインストールできるようにするため、`.npmrc` ファイルには、次のような指定をしてあります。
 
@@ -391,52 +391,52 @@ prefix=/home/node/workspace/.npm-global
 - VS Code を使ったビルド方法
 - build.sh を使ったビルド方法
 - VNC Server のパスワード、ポート番号の変更
-- `hiro345g/devcon-gnpr:1.0` へ戻す方法
+- `hiro345g/devcon-gnpr-202312:1.0` へ戻す方法
 - カスタムイメージの削除方法
 
 ### ビルドの準備
 
-　最初にビルド済みの hiro345g/devcon-gnpr:1.0 をダウンロードしておきます。次のように `docker pull` コマンドを実行します。
+　最初にビルド済みの hiro345g/devcon-gnpr-202312:1.0 をダウンロードしておきます。次のように `docker pull` コマンドを実行します。
 
 ```console
-docker pull hiro345g/devcon-gnpr:1.0
+docker pull hiro345g/devcon-gnpr-202312:1.0
 ```
 
 　基本は、これをカスタマイズすることになります。
 
 　次に `${REPO_DIR}/build_devcon/` にある `.devcontainer/devcontainer.json` や `Dockerfile` を修正してください。必要なら、他のファイルもカスタマイズしてください。
 
-　この後、`devcon-gnpr-custom:1.0` のカスタムイメージを作成する方法を説明します。
+　この後、`devcon-gnpr-202312-custom:1.0` のカスタムイメージを作成する方法を説明します。
 
 ### VS Code を使ったビルド方法
 
 　VS Code を起動してから、F1 キーを入力して VS Code のコマンドパレットを表示します。入力欄へ「dev containers open」などと入力すると「開発コンテナー: コンテナーでフォルダを開く...（Dev Containers: Open Folder in Container...）」が選択肢に表示されます。これをクリックすると、フォルダーを選択する画面になるので `${REPO_DIR}/build_devcon` を指定して開きます。
 
-　`vsc-build_devcon-` で始まる Docker イメージが作成されてコンテナーが起動します。`vsc-build_devcon-` で始まる Docker イメージに `devcon-gnpr:1.0` のタグをつけます。
+　`vsc-build_devcon-` で始まる Docker イメージが作成されてコンテナーが起動します。`vsc-build_devcon-` で始まる Docker イメージに `devcon-gnpr-202312:1.0` のタグをつけます。
 
-　例えば、次の例だと vsc-build_devcon-b3ed032a709b975173b2f2fcf5212c79-uid といったイメージが作成されたので、それに対して `devcon-gnpr-custom:1.0` のタグをつけています。
+　例えば、次の例だと vsc-build_devcon-b3ed032a709b975173b2f2fcf5212c79-uid といったイメージが作成されたので、それに対して `devcon-gnpr-202312-custom:1.0` のタグをつけています。
 
 ```console
 $ docker container ls |grep vsc
 351cab45fe6c   vsc-build_devcon-b3ed032a709b975173b2f2fcf5212c79-uid   （略）
-$ docker tag vsc-build_devcon-b3ed032a709b975173b2f2fcf5212c79-uid devcon-gnpr-custom:1.0
+$ docker tag vsc-build_devcon-b3ed032a709b975173b2f2fcf5212c79-uid devcon-gnpr-202312-custom:1.0
 ```
 
-　使用する Docker イメージを作成した `devcon-gnpr-custom:1.0` へ変更する必要があるので、`${REPO_DIR}/docker-compose.yml` を次のように編集します。
+　使用する Docker イメージを作成した `devcon-gnpr-202312-custom:1.0` へ変更する必要があるので、`${REPO_DIR}/docker-compose.yml` を次のように編集します。
 
 ```yaml
-name: devcon-gnpr
+name: devcon-gnpr-202312
 services:
-  devcon-gnpr:
-    #image: hiro345g/devcon-gnpr:1.0
-    image: devcon-gnpr-custom:1.0
-    container_name: devcon-gnpr
+  devcon-gnpr-202312:
+    #image: hiro345g/devcon-gnpr-202312:1.0
+    image: devcon-gnpr-202312-custom:1.0
+    container_name: devcon-gnpr-202312
     （略）
 ```
 
 ### build.sh を使ったビルド方法
 
-　`${REPO_DIR}/build_devcon/build.sh` スクリプトを実行すると、カスタム Docker イメージをビルドしてタグ devcon-gnpr:1.0 をつけることができます。
+　`${REPO_DIR}/build_devcon/build.sh` スクリプトを実行すると、カスタム Docker イメージをビルドしてタグ devcon-gnpr-202312:1.0 をつけることができます。
 
 　`build.sh` スクリプトを利用するには、`npm` コマンド、`docker` コマンドが実行できる環境が必要です。内部的に `@devcontainers/cli` を `npm exec` コマンドで実行しています。
 
@@ -445,27 +445,27 @@ cd ${REPO_DIR}
 sh ./builde_devcon/build.sh
 ```
 
-　カスタマイズしたことがわかるように `build.sh` で作成した `devcon-gnpr:1.0` イメージに `devcon-gnpr-custom:1.0` のタグをつけます。
+　カスタマイズしたことがわかるように `build.sh` で作成した `devcon-gnpr-202312:1.0` イメージに `devcon-gnpr-202312-custom:1.0` のタグをつけます。
 
 ```console
-docker image tag hiro345g/devcon-gnpr:1.0 devcon-gnpr:1.0
+docker image tag hiro345g/devcon-gnpr-202312:1.0 devcon-gnpr-202312:1.0
 ```
 
-　`devcon-gnpr:1.0` のイメージタグは必要ないので `docker image rm` コマンドで削除します。
+　`devcon-gnpr-202312:1.0` のイメージタグは必要ないので `docker image rm` コマンドで削除します。
 
 ```console
-docker image rm devcon-gnpr:1.0
+docker image rm devcon-gnpr-202312:1.0
 ```
 
-　使用する Docker イメージを作成した `devcon-gnpr-custom:1.0` へ変更する必要があるので、`${REPO_DIR}/docker-compose.yml` を次のように編集します。
+　使用する Docker イメージを作成した `devcon-gnpr-202312-custom:1.0` へ変更する必要があるので、`${REPO_DIR}/docker-compose.yml` を次のように編集します。
 
 ```yaml
-name: devcon-gnpr
+name: devcon-gnpr-202312
 services:
-  devcon-gnpr:
-    #image: hiro345g/devcon-gnpr:1.0
-    image: devcon-gnpr-custom:1.0
-    container_name: devcon-gnpr
+  devcon-gnpr-202312:
+    #image: hiro345g/devcon-gnpr-202312:1.0
+    image: devcon-gnpr-202312-custom:1.0
+    container_name: devcon-gnpr-202312
     （略）
 ```
 
@@ -483,17 +483,17 @@ services:
 }
 ```
 
-### `hiro345g/devcon-gnpr:1.0` へ戻す方法
+### `hiro345g/devcon-gnpr-202312:1.0` へ戻す方法
 
-`hiro345g/devcon-gnpr:1.0` へ戻すには、`${REPO_DIR}/docker-compose.yml` を次のように編集します。
+`hiro345g/devcon-gnpr-202312:1.0` へ戻すには、`${REPO_DIR}/docker-compose.yml` を次のように編集します。
 
 ```yaml
-name: devcon-gnpr
+name: devcon-gnpr-202312
 services:
-  devcon-gnpr:
-    image: hiro345g/devcon-gnpr:1.0
-    #image: devcon-gnpr-custom:1.0
-    container_name: devcon-gnpr
+  devcon-gnpr-202312:
+    image: hiro345g/devcon-gnpr-202312:1.0
+    #image: devcon-gnpr-202312-custom:1.0
+    container_name: devcon-gnpr-202312
     （略）
 ```
 
@@ -506,14 +506,14 @@ services:
 　カスタムイメージを削除したい場合は、`docker image rm` コマンドで削除します。
 
 ```console
-docker image rm devcon-gnpr-custom:1.0
+docker image rm devcon-gnpr-202312-custom:1.0
 ```
 
 ## 環境変数
 
 　`.env` ファイルを用意すると `docker-compose.yml` 内の `${変数名}` で指定されているものを、`.env` で指定したものへ変更できます。具体的な指定方法は `sample.env` ファイルを参考にしてください。
 
-　コンテナーと Docker ホストとでファイルを手軽に参照したり転送したりできるように、`devcon-gnpr:/share` をバインドマウントするようにしています。Docker ホスト側で使用するディレクトリーを `SHARE_DIR` で指定します。Docker ホスト側に存在するものを指定してください。ここでは、あらかじめ `workspace_share` ディレクトリーを用意してあり、それを使っています。
+　コンテナーと Docker ホストとでファイルを手軽に参照したり転送したりできるように、`devcon-gnpr-202312:/share` をバインドマウントするようにしています。Docker ホスト側で使用するディレクトリーを `SHARE_DIR` で指定します。Docker ホスト側に存在するものを指定してください。ここでは、あらかじめ `workspace_share` ディレクトリーを用意してあり、それを使っています。
 
 　これを変更することができるように、環境変数 `SHARE_DIR` を用意してあります。次の例では `${REPO_DIR}/share` ディレクトリーを作成して、それを使うようにしています。
 

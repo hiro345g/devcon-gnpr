@@ -1,9 +1,9 @@
 {
-  "name": "devcon-gnpr",
+  "name": "devcon-gnpr-202312",
   "dockerComposeFile": [
     "../docker-compose.yml"
   ],
-  "service": "devcon-gnpr",
+  "service": "devcon-gnpr-202312",
   "remoteUser": "node",
   "shutdownAction": "none",
   "workspaceFolder": "/home/node/workspace",

@@ -1,9 +1,9 @@
-name: devcon-gnpr
+name: devcon-gnpr-202312
 services:
-  devcon-gnpr:
+  devcon-gnpr-202312:
     image: hiro345g/devcon-gnpr:1.0
-    container_name: devcon-gnpr
-    hostname: devcon-gnpr
+    container_name: devcon-gnpr-202312
+    hostname: devcon-gnpr-202312
     init: true
     tty: true
     user: node
@@ -25,10 +25,10 @@ services:
 
 volumes:
   workspace-data:
-    name: devcon-gnpr-node-workspace-data
+    name: devcon-gnpr-202312-node-workspace-data
   vscode-server-extensions:
-    name: devcon-gnpr-vscode-server-extensions
+    name: devcon-gnpr-202312-vscode-server-extensions
 
 networks:
   devnode-net:
-    name: devcon-gnpr-net
+    name: devcon-gnpr-202312-net
